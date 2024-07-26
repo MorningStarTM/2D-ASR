@@ -1,5 +1,5 @@
 import pygame
-from radar import AbstractCar
+from radar import AbstractCar, RadarCar
 
 # Initialize Pygame
 pygame.init()
@@ -23,7 +23,7 @@ def create_objects():
 def main():
     run = True
     clock = pygame.time.Clock()
-    car = AbstractCar(5, 5)
+    car = RadarCar(5, 5)
     objects = create_objects()
 
     while run:
