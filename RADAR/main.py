@@ -33,6 +33,9 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_r:  # Toggle radar visibility with 'R' key
+                    car.radar_visible = not car.radar_visible
 
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
