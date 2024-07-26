@@ -15,6 +15,7 @@ class AbstractCar:
         self.START_POS = (250, 350)  # Default start position
         self.x, self.y = self.START_POS
         self.acceration = 0.1
+        self.radar_visible = True
 
     def rotate(self, left=False, right=False):
         if left:
@@ -58,7 +59,8 @@ class AbstractCar:
             if dist < length:
                 end_x = self.x + math.cos(angle) * dist
                 end_y = self.y - math.sin(angle) * dist
-            pygame.draw.line(win, (255, 0, 0), (self.x, self.y), (end_x, end_y), 1)
+            if self.radar_visible:
+                pygame.draw.line(win, (255, 0, 0), (self.x, self.y), (end_x, end_y), 1)
         print("Distances: ", distances)
 
     def get_distance_to_objects(self, start, end, objects):
