@@ -1,5 +1,5 @@
 import pygame
-from radar import AbstractCar, RadarCar
+from radar import AbstractCar, RadarCar, ImageRadarCar
 
 # Initialize Pygame
 pygame.init()
@@ -23,7 +23,8 @@ def create_objects():
 def main():
     run = True
     clock = pygame.time.Clock()
-    car = RadarCar(5, 5)
+    #car = RadarCar(5, 5)
+    car = ImageRadarCar(5, 5, car_image_path="assets\\BlueStrip_1.png")
     objects = create_objects()
 
     while run:
